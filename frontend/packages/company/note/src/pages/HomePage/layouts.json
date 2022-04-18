@@ -1,0 +1,147 @@
+{
+  "note.home": {
+    "large": {
+      "blocks": [
+        {
+          "blockId": "ia",
+          "component": "core.block.sideAppHeader",
+          "slotName": "side",
+          "title": "Notes",
+          "icon": "ico-compose-alt",
+          "blockLayout": "sidebar app header"
+        },
+        {
+          "blockId": "i5",
+          "component": "core.block.searchBox",
+          "slotName": "side",
+          "placeholder": "Search",
+          "blockProps": {
+            "variant": "plained",
+            "titleComponent": "h2",
+            "titleVariant": "subtitle1",
+            "titleColor": "textPrimary",
+            "noFooter": true,
+            "noHeader": true
+          },
+          "title": "",
+          "freeze": true
+        },
+        {
+          "component": "core.block.sidebarAppMenu",
+          "slotName": "side",
+          "title": "Notes",
+          "blockId": "i8",
+          "key": "i8",
+          "menuName": "sidebarMenu",
+          "blockLayout": "sidebar app menu"
+        },
+        {
+          "blockId": "v44br",
+          "component": "core.dividerBlock",
+          "slotName": "side",
+          "title": "",
+          "dividerVariant": "middle",
+          "blockLayout": "sidebar divider"
+        },
+        {
+          "component": "core.categoryBlock",
+          "slotName": "side",
+          "title": "Categories",
+          "href": "/note/category",
+          "blockId": "i9",
+          "key": "i9",
+          "blockLayout": "sidebar app category"
+        },
+        {
+          "component": "note.block.BrowseBlogs",
+          "slotName": "main",
+          "title": "Featured Notes",
+          "dataSource": {
+            "apiParams": "view=feature",
+            "apiUrl": "/note"
+          },
+          "blockLayout": "Large Main Lists",
+          "blockId": "i11",
+          "key": "i11",
+          "itemView": "note.itemView.mainList",
+          "contentType": "note",
+          "canLoadMore": false,
+          "displayLimit": "3",
+          "emptyPageProps": {
+            "variant": "default"
+          },
+          "gridLayout": "Note Lists",
+          "emptyPage": "hide"
+        },
+        {
+          "blockId": "ne9v",
+          "component": "note.block.BrowseBlogs",
+          "slotName": "main",
+          "emptyPageProps": {
+            "noHeader": true,
+            "contentStyle": {
+              "bgColor": "0"
+            },
+            "variant": "default",
+            "title": "No Notes"
+          },
+          "title": "Popular Notes",
+          "contentType": "note",
+          "dataSource": {
+            "apiUrl": "/note",
+            "apiParams": "sort=most_viewed"
+          },
+          "blockLayout": "Large Main Lists",
+          "canLoadMore": false,
+          "itemView": "note.itemView.mainList",
+          "gridLayout": "Note Lists",
+          "displayLimit": "4"
+        }
+      ],
+      "containers": {},
+      "pageName": "note.home",
+      "templateName": "two-column-fixed"
+    },
+    "small": {
+      "blocks": [
+        {
+          "component": "core.block.sidebarAppMobile",
+          "slotName": "main",
+          "blockProps": {
+            "variant": "plained",
+            "marginBottom": 2
+          },
+          "key": "ckbwe",
+          "blockId": "ckbwe"
+        },
+        {
+          "blockId": "io87",
+          "key": "io87",
+          "component": "note.block.BrowseBlogs",
+          "slotName": "main",
+          "emptyPageProps": {
+            "noHeader": true,
+            "contentStyle": {
+              "bgColor": "0"
+            },
+            "variant": "default",
+            "title": "No Notes"
+          },
+          "title": "Popular Notes",
+          "contentType": "note",
+          "dataSource": {
+            "apiUrl": "/note",
+            "apiParams": "sort=most_viewed"
+          },
+          "blockLayout": "App List - Mobile - Paper",
+          "canLoadMore": true,
+          "itemView": "note.itemView.mainList",
+          "gridLayout": "Note - Mobile Main Card"
+        }
+      ],
+      "containers": {},
+      "pageName": "note.home",
+      "templateName": "mobile"
+    }
+  }
+}
