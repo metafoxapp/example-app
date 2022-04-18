@@ -89,7 +89,7 @@ class NoteDetail extends JsonResource
             'is_pending'        => $isPending,
             'is_draft'          => $isDraft,
             'is_saved'          => PolicyGate::check($this->resource->entityType(), 'isSavedItem', [$context, $this->resource]),
-            'post_status'       => $this->resource->is_draft ? Note::BLOG_STATUS_DRAFT : Note::BLOG_STATUS_PUBLIC,
+            'post_status'       => $this->resource->is_draft ? Note::STATUS_DRAFT : Note::STATUS_PUBLIC,
             'text'              => $text,
             'image'             => $this->resource->images,
             'statistic'         => $this->getStatistic(),

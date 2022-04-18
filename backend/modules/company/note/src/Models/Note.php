@@ -107,8 +107,8 @@ class Note extends Model implements
 
     public const ENTITY_TYPE = 'note';
 
-    public const BLOG_STATUS_PUBLIC = 1;
-    public const BLOG_STATUS_DRAFT = 2;
+    public const STATUS_PUBLIC = 1;
+    public const STATUS_DRAFT = 2;
 
     public const NO_IMAGE_PATH = 'assets/metafox/note/images/no_image.png';
 
