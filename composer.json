@@ -13,14 +13,14 @@
             "core": false,
             "path": "modules/company/note",
             "nameAlias": "note",
-            "nameStudly": "Example",
-            "namespace": "Company\\Example",
+            "nameStudly": "Note",
+            "namespace": "Company\\Note",
             "author": "phpFox",
             "authorUrl": "https://www.phpfox.com/",
             "internalUrl": "/note",
             "internalAdminUrl": "/admincp/setting/edit/note",
             "providers": [
-                "Company\\Example\\Providers\\AppServiceProvider"
+                "Company\\Note\\Providers\\AppServiceProvider"
             ],
             "aliases": {
             }
@@ -28,12 +28,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Company\\Example\\": "src/"
+            "Company\\Note\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Company\\Example\\Tests\\": "tests/"
+            "Company\\Note\\Tests\\": "tests/"
         }
     }
 }

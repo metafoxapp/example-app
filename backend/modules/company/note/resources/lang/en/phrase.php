@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'note'                                                                   => 'Example',
+    'note'                                                                   => 'Note',
     'cant_create_note'                                                       => 'Can\'t create note',
     'cant_update_note'                                                       => 'Can\'t update note',
     'cant_delete_note'                                                       => 'Can\'t delete note',
