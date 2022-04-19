@@ -1,0 +1,39 @@
+{
+    "name": "company/note",
+    "version": "1.0.0",
+    "description": "",
+    "authors": [
+        {
+            "name": "developer",
+            "email": "dev@phpfox.com"
+        }
+    ],
+    "extra": {
+        "metafox": {
+            "core": false,
+            "path": "modules/company/note",
+            "nameAlias": "note",
+            "nameStudly": "Example",
+            "namespace": "Company\\Example",
+            "author": "phpFox",
+            "authorUrl": "https://www.phpfox.com/",
+            "internalUrl": "/note",
+            "internalAdminUrl": "/admincp/setting/edit/note",
+            "providers": [
+                "Company\\Example\\Providers\\AppServiceProvider"
+            ],
+            "aliases": {
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Company\\Example\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Company\\Example\\Tests\\": "tests/"
+        }
+    }
+}
