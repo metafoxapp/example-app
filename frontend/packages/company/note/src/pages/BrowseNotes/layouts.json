@@ -1,0 +1,148 @@
+{
+  "note.browse": {
+    "large": {
+      "blocks": [
+        {
+          "component": "core.block.mainListing",
+          "slotName": "main",
+          "title": "Notes",
+          "emptyPageProps": {
+            "noHeader": true,
+            "contentStyle": {
+              "bgColor": "0"
+            },
+            "variant": "default",
+            "title": "No Notes Found",
+            "noBlock": 1
+          },
+          "dataSource": {
+            "apiParams": "sort=latest",
+            "apiUrl": "/note"
+          },
+          "blockId": "i11",
+          "key": "i11",
+          "itemView": "note.itemView.mainList",
+          "contentType": "note",
+          "canLoadMore": true,
+          "blockLayout": "Large Main Lists",
+          "canLoadSmooth": 1,
+          "gridLayout": "Note Lists",
+          "emptyPage": "core.block.no_content_with_icon"
+        },
+        {
+          "blockId": "ia",
+          "component": "core.block.sideAppHeader",
+          "slotName": "side",
+          "title": "Notes",
+          "icon": "ico-compose-alt",
+          "blockProps": {
+            "variant": "plained",
+            "titleComponent": "h2",
+            "titleVariant": "subtitle1",
+            "titleColor": "textPrimary",
+            "noFooter": true,
+            "noHeader": true
+          },
+          "freeze": true
+        },
+        {
+          "blockId": "i5",
+          "component": "core.block.searchBox",
+          "slotName": "side",
+          "placeholder": "Search",
+          "blockProps": {
+            "variant": "plained",
+            "titleComponent": "h2",
+            "titleVariant": "subtitle1",
+            "titleColor": "textPrimary",
+            "noFooter": true,
+            "noHeader": true
+          },
+          "title": "",
+          "freeze": true
+        },
+        {
+          "component": "core.block.sidebarAppMenu",
+          "slotName": "side",
+          "title": "Notes",
+          "blockId": "i8",
+          "key": "i8",
+          "menuName": "sidebarMenu",
+          "blockLayout": "sidebar app menu"
+        },
+        {
+          "blockId": "v44br",
+          "component": "core.dividerBlock",
+          "slotName": "side",
+          "title": "sidebar divider",
+          "dividerVariant": "middle",
+          "blockLayout": "sidebar divider"
+        },
+        {
+          "component": "core.categoryBlock",
+          "slotName": "side",
+          "title": "Categories",
+          "href": "/note/category",
+          "blockId": "i9",
+          "key": "i9",
+          "blockLayout": "sidebar app category"
+        }
+      ],
+      "containers": {},
+      "pageName": "note.home",
+      "templateName": "two-column-fixed"
+    },
+    "small": {
+      "blocks": [
+        {
+          "component": "core.block.sidebarAppMobile",
+          "slotName": "main",
+          "blockProps": {
+            "variant": "plained",
+            "marginBottom": 2
+          },
+          "contents": [
+            {
+              "name": "core.block.searchBox"
+            },
+            {
+              "name": "core.block.sidebarAppMenu"
+            },
+            {
+              "name": "core.categoryBlock"
+            }
+          ],
+          "key": "tggha",
+          "blockId": "tggha"
+        },
+        {
+          "component": "core.block.mainListing",
+          "slotName": "main",
+          "blockView": "ui.block.default",
+          "blockId": "i10",
+          "key": "i10",
+          "itemView": "note.itemView.mainList",
+          "gridItemProps": {
+            "xs": 12,
+            "sm": 6,
+            "md": 6,
+            "lg": 6,
+            "xl": 4
+          },
+          "canLoadMore": true,
+          "contentType": "note",
+          "title": "",
+          "blockLayout": "App List - Mobile - Paper",
+          "gridLayout": "Note - Mobile Main Card",
+          "emptyPageProps": {
+            "noBlock": 1
+          },
+          "emptyPage": "core.block.no_content_with_icon"
+        }
+      ],
+      "containers": {},
+      "pageName": "note.home",
+      "templateName": "mobile"
+    }
+  }
+}

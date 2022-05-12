@@ -1,0 +1,40 @@
+{
+    "name": "company/note",
+    "version": "1.0.0",
+    "description": "",
+    "authors": [
+        {
+            "name": "MetaFox",
+            "email": "dev@phpfox.com",
+            "homepage": "https://www.phpfox.com/"
+        }
+    ],
+    "extra": {
+        "metafox": {
+            "core": false,
+            "path": "packages/company/note",
+            "nameAlias": "note",
+            "namespace": "Company\\Note",
+            "internalUrl": "/note",
+            "internalAdminUrl": "/admincp/setting/edit/note",
+            "providers": [
+                "Company\\Note\\Providers\\PackageServiceProvider"
+            ],
+            "frontend": [
+                "@company/note"
+            ],
+            "aliases": {
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Company\\Note\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Company\\Note\\Tests\\": "tests/"
+        }
+    }
+}
