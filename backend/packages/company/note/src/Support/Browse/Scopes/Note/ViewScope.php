@@ -158,13 +158,13 @@ class ViewScope extends BaseScope
                     $join->on('f.user_id', '=', 'notes.owner_id')
                         ->where([
                             ['f.owner_id', '=', $userContext->entityId()],
-                            ['notes.is_draft', '!=', Note::IS_DRAFT],
-                            ['notes.is_approved', '=', Note::IS_APPROVED],
+                            ['notes.is_draft', '!=', 1],
+                            ['notes.is_approved', '=', 1],
                         ]);
                 });
                 break;
             case Browse::VIEW_PENDING:
-                $builder->where('notes.is_approved', '!=', Note::IS_APPROVED);
+                $builder->where('notes.is_approved', '!=', 1);
                 if ($this->getProfileId() == $userContext->entityId()) {
                     $builder->where('notes.user_id', $this->getProfileId());
                 }
@@ -175,14 +175,14 @@ class ViewScope extends BaseScope
                 break;
             case self::VIEW_DRAFT:
                 $builder->where([
-                    ['notes.is_draft', '=', Note::IS_DRAFT],
+                    ['notes.is_draft', '=', 1],
                     ['notes.user_id', '=', $userContext->entityId()],
                 ]);
                 break;
             default:
                 $builder->where([
-                    ['notes.is_draft', '!=', Note::IS_DRAFT],
-                    ['notes.is_approved', '=', Note::IS_APPROVED],
+                    ['notes.is_draft', '!=', 1],
+                    ['notes.is_approved', '=', 1],
                 ]);
         }
     }

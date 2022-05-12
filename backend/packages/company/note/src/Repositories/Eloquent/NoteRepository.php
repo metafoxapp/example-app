@@ -295,7 +295,7 @@ class NoteRepository extends AbstractRepository implements NoteRepositoryInterfa
         }
 
         if ($profileId > 0) {
-            $query->where('notes.is_draft', '!=', Note::IS_DRAFT);
+            $query->where('notes.is_draft', '!=', 1);
         }
 
         if ($owner->entityId() != $context->entityId()) {
@@ -304,7 +304,7 @@ class NoteRepository extends AbstractRepository implements NoteRepositoryInterfa
             $viewScope->setIsViewOwner(true);
 
             if (!policy_check(NotePolicy::class, 'approve', $context, resolve(Note::class))) {
-                $query->where('notes.is_approved', '=', Note::IS_APPROVED);
+                $query->where('notes.is_approved', '=', 1);
             }
         }
 
@@ -377,9 +377,9 @@ class NoteRepository extends AbstractRepository implements NoteRepositoryInterfa
     public function findFeature(int $limit = 4): Paginator
     {
         return $this->getModel()->newQuery()
-            ->where('is_featured', Note::IS_FEATURED)
-            ->where('is_approved', Note::IS_APPROVED)
-            ->where('is_draft', '<>', Note::IS_DRAFT)
+            ->where('is_featured', 1)
+            ->where('is_approved', 1)
+            ->where('is_draft', '<>', 1)
             ->orderByDesc(HasFeature::FEATURED_AT_COLUMN)
             ->simplePaginate($limit);
     }
@@ -387,9 +387,9 @@ class NoteRepository extends AbstractRepository implements NoteRepositoryInterfa
     public function findSponsor(int $limit = 4): Paginator
     {
         return $this->getModel()->newQuery()
-            ->where('is_sponsor', Note::IS_SPONSOR)
-            ->where('is_approved', Note::IS_APPROVED)
-            ->where('is_draft', '<>', Note::IS_DRAFT)
+            ->where('is_sponsor', 1)
+            ->where('is_approved', 1)
+            ->where('is_draft', '<>', 1)
             ->simplePaginate($limit);
     }
 

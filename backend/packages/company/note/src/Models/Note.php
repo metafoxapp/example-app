@@ -204,7 +204,7 @@ class Note extends Model implements
      */
     public function toActivityFeed(): ?FeedAction
     {
-        if ($this->is_draft == self::IS_DRAFT) {
+        if ($this->is_draft == 1) {
             return null;
         }
 

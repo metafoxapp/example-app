@@ -4,7 +4,7 @@ namespace Company\Note\Listeners;
 
 class ModelCreatedListener
 {
-    public function handle()
+    public function handle($model)
     {
 
     }
