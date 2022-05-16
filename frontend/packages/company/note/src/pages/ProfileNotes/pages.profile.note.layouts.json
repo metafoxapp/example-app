@@ -42,7 +42,7 @@
           "hasSearchBox": true,
           "freeze": false,
           "blockLayout": "Profile - Side Contained",
-          "gridLayout": "Note Grid",
+          "gridLayout": "Blog Grid",
           "emptyPageProps": {
             "variant": "default"
           },

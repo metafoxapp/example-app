@@ -39,7 +39,7 @@
           },
           "itemView": "note.itemView.mainCard",
           "blockLayout": "Profile - Side Contained",
-          "gridLayout": "Note Grid",
+          "gridLayout": "Blog Grid",
           "emptyPage": "core.block.no_content",
           "hasSearchBox": 1,
           "emptyPageProps": {

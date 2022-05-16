@@ -24,7 +24,7 @@
           "canLoadMore": true,
           "contentType": "note",
           "blockLayout": "Large Main Lists",
-          "gridLayout": "Note Lists",
+          "gridLayout": "Blog Lists",
           "emptyPage": "core.block.no_results"
         },
         {
@@ -192,7 +192,7 @@
           "contentType": "note",
           "title": "Search Result",
           "blockLayout": "App List - Mobile - Paper",
-          "gridLayout": "Note - Mobile Main Card",
+          "gridLayout": "Blog - Mobile Main Card",
           "emptyPageProps": {
             "noBlock": 0
           },

@@ -21,7 +21,7 @@ Route::group([
     Route::get('note/search-form', 'NoteController@searchForm');
 
     // Put your routes
-    Route::resource('note-category', 'NoteController');
+    Route::resource('note-category', 'CategoryController');
     Route::resource('note', 'NoteController');
     Route::patch('note/sponsor/{id}', 'NoteController@sponsor');
     Route::patch('note/feature/{id}', 'NoteController@feature');

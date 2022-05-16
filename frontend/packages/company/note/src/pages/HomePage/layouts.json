@@ -70,7 +70,7 @@
           "emptyPageProps": {
             "variant": "default"
           },
-          "gridLayout": "Note Lists",
+          "gridLayout": "Blog Lists",
           "emptyPage": "hide"
         },
         {
@@ -94,7 +94,7 @@
           "blockLayout": "Large Main Lists",
           "canLoadMore": false,
           "itemView": "note.itemView.mainList",
-          "gridLayout": "Note Lists",
+          "gridLayout": "Blog Lists",
           "displayLimit": "4"
         }
       ],
@@ -136,7 +136,7 @@
           "blockLayout": "App List - Mobile - Paper",
           "canLoadMore": true,
           "itemView": "note.itemView.mainList",
-          "gridLayout": "Note - Mobile Main Card"
+          "gridLayout": "Blog - Mobile Main Card"
         }
       ],
       "containers": {},

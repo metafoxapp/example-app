@@ -16,6 +16,6 @@ export default createBlock<ListViewBlockProps>({
     title: 'Notes',
     itemView: 'note.itemView.mainCard',
     blockLayout: 'Main Listings',
-    gridLayout: 'Note - Main Cards'
+    gridLayout: 'Blog - Main Cards'
   }
 });

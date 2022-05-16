@@ -88,7 +88,7 @@
           "canLoadMore": true,
           "emptyPage": "hide",
           "blockLayout": "Large Main Lists",
-          "gridLayout": "Note Lists"
+          "gridLayout": "Blog Lists"
         },
         {
           "blockId": "ne9v",
@@ -111,7 +111,7 @@
           },
           "canLoadMore": true,
           "blockLayout": "Large Main Lists",
-          "gridLayout": "Note Lists"
+          "gridLayout": "Blog Lists"
         }
       ],
       "containers": {},
@@ -162,7 +162,7 @@
           },
           "key": "lvvh",
           "blockLayout": "App List - Mobile - Paper",
-          "gridLayout": "Note - Mobile Main Card",
+          "gridLayout": "Blog - Mobile Main Card",
           "blockId": "lvvh",
           "contentType": "note"
         },
@@ -187,7 +187,7 @@
           "key": "0gkn",
           "blockId": "0gkn",
           "blockLayout": "App List - Mobile - Paper",
-          "gridLayout": "Note - Mobile Main Card",
+          "gridLayout": "Blog - Mobile Main Card",
           "contentType": "note"
         }
       ],

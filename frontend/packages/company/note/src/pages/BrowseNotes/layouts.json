@@ -26,7 +26,7 @@
           "canLoadMore": true,
           "blockLayout": "Large Main Lists",
           "canLoadSmooth": 1,
-          "gridLayout": "Note Lists",
+          "gridLayout": "Blog Lists",
           "emptyPage": "core.block.no_content_with_icon"
         },
         {
@@ -133,7 +133,7 @@
           "contentType": "note",
           "title": "",
           "blockLayout": "App List - Mobile - Paper",
-          "gridLayout": "Note - Mobile Main Card",
+          "gridLayout": "Blog - Mobile Main Card",
           "emptyPageProps": {
             "noBlock": 1
           },
