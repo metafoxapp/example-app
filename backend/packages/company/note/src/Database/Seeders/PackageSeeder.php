@@ -2,11 +2,10 @@
 
 namespace Company\Note\Database\Seeders;
 
-use MetaFox\Platform\Facades\Settings;
 use Illuminate\Database\Seeder;
 use Company\Note\Models\Category;
 
-class PackageDatabaseSeeder extends Seeder
+class PackageSeeder extends Seeder
 {
     /**
      * Run the database seeds.
