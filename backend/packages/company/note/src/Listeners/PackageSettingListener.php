@@ -144,17 +144,6 @@ class PackageSettingListener extends BasePackageSettingListener implements Packa
         ];
     }
 
-    public function getSiteSettingsForm(): array
-    {
-        return [
-            'note.v1' => [
-                'label' => __p('note.phrase.notes'),
-                'value' => 'note',
-                'form'  => \Company\Note\Http\Resources\v1\Note\Admin\NoteSettingForm::class,
-            ],
-        ];
-    }
-
     public function getEvents(): array
     {
         return [
