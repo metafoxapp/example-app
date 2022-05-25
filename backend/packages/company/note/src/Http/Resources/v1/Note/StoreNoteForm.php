@@ -30,11 +30,11 @@ use MetaFox\User\Support\Facades\UserPrivacy;
  */
 
 /**
- * Class CreateNoteForm.
+ * Class StoreNoteForm.
  * @property Model $resource
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
-class CreateNoteForm extends AbstractForm
+class StoreNoteForm extends AbstractForm
 {
     public bool $preserveKeys = true;
 

@@ -19,7 +19,7 @@ use MetaFox\Platform\Rules\ExistIfGreaterThanZero;
 /**
  * Class CreateFormRequest.
  */
-class CreateFormRequest extends FormRequest
+class StoreFormRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.

@@ -6,7 +6,7 @@
 
 namespace Company\Note\Http\Resources\v1\Note;
 
-use MetaFox\Platform\Support\Resource\WebSetting;
+use MetaFox\Platform\Support\Resource\WebSetting as Setting;
 
 /**
  *--------------------------------------------------------------------------
@@ -19,11 +19,11 @@ use MetaFox\Platform\Support\Resource\WebSetting;
 /**
  * Class NoteWebSetting
  * Inject this class into property $resources.
- * @link \Company\Note\Http\Resources\v1\WebAppSetting::$resources;
- * @SuppressWarnings(PHPMD.ExcessiveClassLength)
- * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+ * @link \Company\Note\Http\Resources\v1\WebSetting::$resources;
+ * @ignore
+ * @codeCoverageIgnore
  */
-class NoteWebSetting extends WebSetting
+class WebSetting extends Setting
 {
     protected function initActions(): void
     {

@@ -6,26 +6,28 @@
 
 namespace Company\Note\Http\Resources\v1;
 
-use MetaFox\Platform\Support\Resource\WebAppSetting as AppSetting;
+use MetaFox\Platform\Support\Resource\MobileAppSetting as Setting;
 
 /**
  *--------------------------------------------------------------------------
- * Web Resource Config Gateway
- * Inject this class to @link \Company\Note\Listeners\PackageSettingListener::getWebAppSettings()
+ * Mobile Resource Config Gateway
+ * Inject this class to @link \Company\Note\Listeners\PackageSettingListener::getMobileAppSettings()
  *--------------------------------------------------------------------------
  * stub: /packages/resources/app_setting.stub.
  */
 
 /**
- * Class WebAppSetting.
+ * Class MobileSetting.
+ * @ignore
+ * @codeCoverageIgnore
  */
-class WebAppSetting extends AppSetting
+class MobileSetting extends Setting
 {
     /**
      * @var array<string,string>
      */
     protected $resources = [
         // note
-        'note' => Note\NoteWebSetting::class,
+        // 'country_admin' => Note\MobileSetting::class,
     ];
 }

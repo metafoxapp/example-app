@@ -7,7 +7,7 @@ return [
         'name'        => 'note',
         'title'       => 'Note Settings',
         'description' => 'Note Settings',
-        'driver'      => \Company\Note\Http\Resources\v1\Note\Admin\NoteSettingForm::class,
+        'driver'      => \Company\Note\Http\Resources\v1\Admin\SiteSettingForm::class,
         'url'         => '',
         'package_id'  => 'example/note',
     ],

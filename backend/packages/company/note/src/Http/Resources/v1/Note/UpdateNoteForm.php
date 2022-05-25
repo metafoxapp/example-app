@@ -14,9 +14,9 @@ use MetaFox\Platform\Support\Facades\PrivacyPolicy;
  */
 
 /**
- * Class EditNoteForm.
+ * Class UpdateNoteForm.
  */
-class EditNoteForm extends CreateNoteForm
+class UpdateNoteForm extends StoreNoteForm
 {
     /**
      * @var bool

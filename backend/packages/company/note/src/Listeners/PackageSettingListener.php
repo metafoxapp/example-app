@@ -27,7 +27,7 @@ use Company\Note\GraphQL\Queries\CategoryQuery;
 use Company\Note\GraphQL\Types\NoteTextType;
 use Company\Note\GraphQL\Types\NoteType;
 use Company\Note\GraphQL\Types\CategoryType;
-use Company\Note\Http\Resources\v1\WebAppSetting;
+use Company\Note\Http\Resources\v1\WebSetting;
 use Company\Note\Models\Note;
 use Company\Note\Models\Category;
 use Company\Note\Policies\NotePolicy;
@@ -213,7 +213,7 @@ class PackageSettingListener extends BasePackageSettingListener implements Packa
     public function getWebAppSettings(): ?array
     {
         return [
-            'v1' => WebAppSetting::class,
+            'v1' => WebSetting::class,
         ];
     }
 

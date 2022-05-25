@@ -17,7 +17,8 @@ Route::group([
     'middleware' => 'auth:api',
 ], function () {
     // Note forms
-    Route::get('note/form/{id?}', 'NoteController@form');
+    Route::get('note/form/{id}', 'NoteController@getUpdateForm');
+    Route::get('note/form', 'NoteController@getStoreForm');
     Route::get('note/search-form', 'NoteController@searchForm');
 
     // Put your routes

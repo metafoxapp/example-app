@@ -13,7 +13,7 @@
         "metafox": {
             "core": false,
             "path": "packages/company/note",
-            "nameAlias": "note",
+            "alias": "note",
             "namespace": "Company\\Note",
             "internalUrl": "/note",
             "internalAdminUrl": "/admincp/setting/edit/note",

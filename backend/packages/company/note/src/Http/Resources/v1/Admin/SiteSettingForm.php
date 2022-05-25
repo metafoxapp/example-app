@@ -1,6 +1,6 @@
 <?php
 
-namespace Company\Note\Http\Resources\v1\Note\Admin;
+namespace Company\Note\Http\Resources\v1\Admin;
 
 use Illuminate\Support\Arr;
 use MetaFox\Platform\Facades\Settings;
@@ -19,10 +19,10 @@ use Company\Note\Models\Note as Model;
  */
 
 /**
- * Class NoteSettingForm.
+ * Class SiteSettingForm.
  * @property Model $resource
  */
-class NoteSettingForm extends AbstractForm
+class SiteSettingForm extends AbstractForm
 {
     protected function prepare(): void
     {

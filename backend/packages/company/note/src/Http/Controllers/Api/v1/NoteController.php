@@ -2,27 +2,26 @@
 
 namespace Company\Note\Http\Controllers\Api\v1;
 
+use Company\Note\Http\Requests\v1\Note\IndexRequest;
+use Company\Note\Http\Requests\v1\Note\StoreFormRequest;
+use Company\Note\Http\Requests\v1\Note\StoreRequest;
+use Company\Note\Http\Requests\v1\Note\UpdateRequest;
+use Company\Note\Http\Resources\v1\Note\NoteDetail;
+use Company\Note\Http\Resources\v1\Note\NoteItemCollection;
+use Company\Note\Http\Resources\v1\Note\SearchNoteForm as SearchForm;
+use Company\Note\Http\Resources\v1\Note\StoreNoteForm;
+use Company\Note\Http\Resources\v1\Note\UpdateNoteForm;
+use Company\Note\Models\Note;
+use Company\Note\Policies\NotePolicy;
+use Company\Note\Repositories\NoteRepositoryInterface;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Auth\AuthenticationException;
+use Illuminate\Http\JsonResponse;
 use MetaFox\Platform\Http\Controllers\Api\ApiController;
 use MetaFox\Platform\Http\Requests\v1\FeatureRequest;
 use MetaFox\Platform\Http\Requests\v1\SponsorInFeedRequest;
 use MetaFox\Platform\Http\Requests\v1\SponsorRequest;
 use MetaFox\Platform\Support\Form\AbstractForm;
-use Illuminate\Auth\Access\AuthorizationException;
-use Illuminate\Auth\AuthenticationException;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Resources\Json\JsonResource;
-use Company\Note\Http\Requests\v1\Note\CreateFormRequest;
-use Company\Note\Http\Requests\v1\Note\IndexRequest;
-use Company\Note\Http\Requests\v1\Note\StoreRequest;
-use Company\Note\Http\Requests\v1\Note\UpdateRequest;
-use Company\Note\Http\Resources\v1\Note\NoteDetail;
-use Company\Note\Http\Resources\v1\Note\NoteItemCollection;
-use Company\Note\Http\Resources\v1\Note\CreateNoteForm;
-use Company\Note\Http\Resources\v1\Note\EditNoteForm;
-use Company\Note\Http\Resources\v1\Note\SearchNoteForm as SearchForm;
-use Company\Note\Models\Note;
-use Company\Note\Policies\NotePolicy;
-use Company\Note\Repositories\NoteRepositoryInterface;
 use MetaFox\User\Support\Facades\UserEntity;
 use MetaFox\User\Support\Facades\UserPrivacy;
 
@@ -117,7 +116,7 @@ class NoteController extends ApiController
 
     /**
      * @param UpdateRequest $request
-     * @param int           $id
+     * @param int $id
      *
      * @return JsonResponse
      * @throws AuthorizationException|AuthenticationException
@@ -163,7 +162,7 @@ class NoteController extends ApiController
 
     /**
      * @param SponsorRequest $request
-     * @param int            $id
+     * @param int $id
      *
      * @return JsonResponse
      * @throws AuthenticationException|AuthorizationException
@@ -174,20 +173,20 @@ class NoteController extends ApiController
         $sponsor = $params['sponsor'];
         $this->repository->sponsor(user(), $id, $sponsor);
 
-        $isSponsor = (bool) $sponsor;
+        $isSponsor = (bool)$sponsor;
 
         $message = $isSponsor ? 'core.phrase.resource_sponsored_successfully' : 'core.phrase.resource_unsponsored_successfully';
         $message = __p($message, ['resource_name' => __p('note.phrase.note')]);
 
         return $this->success([
-            'id'         => $id,
+            'id' => $id,
             'is_sponsor' => $isSponsor,
         ], [], $message);
     }
 
     /**
      * @param FeatureRequest $request
-     * @param int            $id
+     * @param int $id
      *
      * @return JsonResponse
      * @throws AuthenticationException
@@ -205,8 +204,8 @@ class NoteController extends ApiController
         }
 
         return $this->success([
-            'id'          => $id,
-            'is_featured' => (int) $feature,
+            'id' => $id,
+            'is_featured' => (int)$feature,
         ], [], $message);
     }
 
@@ -223,7 +222,7 @@ class NoteController extends ApiController
 
         // @todo recheck response.
         return $this->success([
-            'id'         => $id,
+            'id' => $id,
             'is_pending' => 0,
         ], [], __p('note.phrase.note_has_been_approved'));
     }
@@ -240,42 +239,50 @@ class NoteController extends ApiController
         $this->repository->publish(user(), $id);
 
         return $this->success([
-            'id'       => $id,
+            'id' => $id,
             'is_draft' => 0,
         ], [], __p('note.phrase.note_published_successfully'));
     }
 
     /**
-     * @param CreateFormRequest $request
-     * @param int|null          $id
+     * @param StoreFormRequest $request
      *
      * @return JsonResponse
      * @throws AuthenticationException
      * @throws AuthorizationException
      */
-    public function form(CreateFormRequest $request, ?int $id = null): JsonResponse
+    public function getStoreForm(StoreFormRequest $request): JsonResponse
     {
         $note = new Note();
         $context = user();
 
         $data = $request->validated();
         $note->owner_id = $data['owner_id'];
-
-        if ($id !== null) {
-            $note = $this->repository->find($id);
-            policy_authorize(NotePolicy::class, 'update', $context, $note);
-
-            return $this->success(new EditNoteForm($note), [], '');
-        }
-
         policy_authorize(NotePolicy::class, 'create', $context);
 
-        return $this->success(new CreateNoteForm($note), [], '');
+        return $this->success(new StoreNoteForm($note), [], '');
+    }
+
+    /**
+     * @param int $id
+     *
+     * @return JsonResponse
+     * @throws AuthenticationException
+     * @throws AuthorizationException
+     */
+    public function getUpdateForm(int $id): JsonResponse
+    {
+        $context = user();
+
+        $note = $this->repository->find($id);
+        policy_authorize(NotePolicy::class, 'update', $context, $note);
+
+        return $this->success(new UpdateNoteForm($note), [], '');
     }
 
     /**
      * @param SponsorInFeedRequest $request
-     * @param int                  $id
+     * @param int $id
      *
      * @return JsonResponse
      * @throws AuthenticationException
@@ -287,13 +294,13 @@ class NoteController extends ApiController
         $sponsor = $params['sponsor'];
         $this->repository->sponsorInFeed(user(), $id, $sponsor);
 
-        $isSponsor = (bool) $sponsor;
+        $isSponsor = (bool)$sponsor;
 
         $message = $isSponsor ? 'core.phrase.resource_sponsored_in_feed_successfully' : 'core.phrase.resource_unsponsored_in_feed_successfully';
         $message = __p($message, ['resource_name' => __p('note.phrase.note')]);
 
         return $this->success([
-            'id'         => $id,
+            'id' => $id,
             'is_sponsor' => $isSponsor,
         ], [], $message);
     }
