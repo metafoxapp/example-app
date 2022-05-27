@@ -1,7 +1,6 @@
 <?php
 /* this is auto generated file */
 return [
-
     [
         'category'    => 'Site Settings',
         'name'        => 'note',
