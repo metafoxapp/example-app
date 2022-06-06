@@ -87,10 +87,10 @@ class NoteController extends ApiController
                 $owner = UserEntity::getById($params['owner_id'])->detail;
             }
         }
-        $message = __p('note.phrase.note_published_successfully');
+        $message = __p('note::phrase.note_published_successfully');
 
         if ($params['is_draft']) {
-            $message = __p('note.phrase.already_saved_note_as_draft');
+            $message = __p('note::phrase.already_saved_note_as_draft');
         }
 
         $note = $this->repository->createNote($context, $owner, $params);
@@ -135,7 +135,7 @@ class NoteController extends ApiController
 
         if (!$isPublished) {
             if (!$params['is_draft']) {
-                $message = __p('note.phrase.note_published_successfully');
+                $message = __p('note::phrase.note_published_successfully');
             }
         }
 
@@ -153,7 +153,7 @@ class NoteController extends ApiController
         $context = user();
         $this->repository->deleteNote($context, $id);
 
-        $message = __p('note.phrase.note_deleted_successfully');
+        $message = __p('note::phrase.note_deleted_successfully');
 
         return $this->success([
             'id' => $id,
@@ -176,7 +176,7 @@ class NoteController extends ApiController
         $isSponsor = (bool)$sponsor;
 
         $message = $isSponsor ? 'core.phrase.resource_sponsored_successfully' : 'core.phrase.resource_unsponsored_successfully';
-        $message = __p($message, ['resource_name' => __p('note.phrase.note')]);
+        $message = __p($message, ['resource_name' => __p('note::phrase.note')]);
 
         return $this->success([
             'id' => $id,
@@ -198,9 +198,9 @@ class NoteController extends ApiController
         $feature = $params['feature'];
         $this->repository->feature(user(), $id, $feature);
 
-        $message = __p('note.phrase.note_featured_successfully');
+        $message = __p('note::phrase.note_featured_successfully');
         if (!$feature) {
-            $message = __p('note.phrase.note_unfeatured_successfully');
+            $message = __p('note::phrase.note_unfeatured_successfully');
         }
 
         return $this->success([
@@ -224,7 +224,7 @@ class NoteController extends ApiController
         return $this->success([
             'id' => $id,
             'is_pending' => 0,
-        ], [], __p('note.phrase.note_has_been_approved'));
+        ], [], __p('note::phrase.note_has_been_approved'));
     }
 
     /**
@@ -241,7 +241,7 @@ class NoteController extends ApiController
         return $this->success([
             'id' => $id,
             'is_draft' => 0,
-        ], [], __p('note.phrase.note_published_successfully'));
+        ], [], __p('note::phrase.note_published_successfully'));
     }
 
     /**
@@ -297,7 +297,7 @@ class NoteController extends ApiController
         $isSponsor = (bool)$sponsor;
 
         $message = $isSponsor ? 'core.phrase.resource_sponsored_in_feed_successfully' : 'core.phrase.resource_unsponsored_in_feed_successfully';
-        $message = __p($message, ['resource_name' => __p('note.phrase.note')]);
+        $message = __p($message, ['resource_name' => __p('note::phrase.note')]);
 
         return $this->success([
             'id' => $id,

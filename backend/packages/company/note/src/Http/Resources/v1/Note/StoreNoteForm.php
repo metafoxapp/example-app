@@ -77,7 +77,7 @@ class StoreNoteForm extends AbstractForm
                 'returnKeyType' => 'next',
                 'margin'        => 'normal',
                 'label'         => __p('core.phrase.title'),
-                'placeholder'   => __p('note.phrase.fill_in_a_title_for_your_note'),
+                'placeholder'   => __p('note::phrase.fill_in_a_title_for_your_note'),
                 'validation'    => [
                     'type'      => 'string',
                     'required'  => true,
@@ -100,7 +100,7 @@ class StoreNoteForm extends AbstractForm
                 'required'      => true,
                 'returnKeyType' => 'default',
                 'label'         => __p('core.phrase.post'),
-                'placeholder'   => __p('note.phrase.add_some_content_to_your_note'),
+                'placeholder'   => __p('note::phrase.add_some_content_to_your_note'),
                 'validation'    => [
                     'required' => true,
                 ],
@@ -120,7 +120,7 @@ class StoreNoteForm extends AbstractForm
             ]),
             new Privacy([
                 'name'        => 'privacy',
-                'description' => __p('note.phrase.control_who_can_see_this_note'),
+                'description' => __p('note::phrase.control_who_can_see_this_note'),
             ]),
             new Hidden([
                 'name' => 'module_id',

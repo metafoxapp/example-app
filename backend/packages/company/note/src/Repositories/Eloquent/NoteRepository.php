@@ -63,7 +63,7 @@ class NoteRepository extends AbstractRepository implements NoteRepositoryInterfa
         if ($waitingTime > 0) {
             abort(
                 Response::HTTP_FORBIDDEN,
-                __p('note.phrase.you_are_posting_a_little_too_soon_dot_try_again_in_seconds', [
+                __p('note::phrase.you_are_posting_a_little_too_soon_dot_try_again_in_seconds', [
                     'quantity' => $waitingTime,
                 ])
             );

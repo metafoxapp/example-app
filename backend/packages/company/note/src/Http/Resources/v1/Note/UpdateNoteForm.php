@@ -40,7 +40,7 @@ class UpdateNoteForm extends StoreNoteForm
         }
 
         $this->config([
-            'title'  => __p('note.phrase.edit_note'),
+            'title'  => __p('note::phrase.edit_note'),
             'action' => url_utility()->makeApiUrl("note/{$this->resource->entityId()}"),
             'method' => MetaFoxForm::METHOD_PUT,
             'value'  => [

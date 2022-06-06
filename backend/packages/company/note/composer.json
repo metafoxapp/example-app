@@ -16,7 +16,7 @@
             "alias": "note",
             "namespace": "Company\\Note",
             "internalUrl": "/note",
-            "internalAdminUrl": "/admincp/setting/edit/note",
+            "internalAdminUrl": "/admincp/note/setting",
             "providers": [
                 "Company\\Note\\Providers\\PackageServiceProvider"
             ],

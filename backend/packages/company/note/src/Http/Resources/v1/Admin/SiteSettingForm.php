@@ -41,7 +41,7 @@ class SiteSettingForm extends AbstractForm
         }
 
         $this->config([
-            'title'  => __('core.phrase.site_settings'),
+            'title'  => __('core::phrase.site_settings'),
             'action' => url_utility()->makeApiUrl('admincp/setting/' . $module),
             'method' => MetaFoxForm::METHOD_POST,
             'value'  => $value,
@@ -54,8 +54,8 @@ class SiteSettingForm extends AbstractForm
         $basic->addFields(
             new SwitchField([
                 'name'        => 'note_allow_create_feed_when_add_new_item',
-                'label'       => __p('note.phrase.note_allow_create_feed_when_add_new_item'),
-                'description' => __p('note.phrase.note_allow_create_feed_when_add_new_item_description'),
+                'label'       => __p('note::phrase.note_allow_create_feed_when_add_new_item'),
+                'description' => __p('note::phrase.note_allow_create_feed_when_add_new_item_description'),
             ]),
             new DividerField(),
         );
@@ -65,8 +65,8 @@ class SiteSettingForm extends AbstractForm
                 new DividerField(),
                 new SwitchField([
                     'name'        => 'display_note_created_in_page',
-                    'label'       => __p('note.phrase.display_note_created_in_page'),
-                    'description' => __p('note.phrase.display_note_created_in_page_description'),
+                    'label'       => __p('note::phrase.display_note_created_in_page'),
+                    'description' => __p('note::phrase.display_note_created_in_page_description'),
                 ]),
             );
         }
@@ -76,8 +76,8 @@ class SiteSettingForm extends AbstractForm
                 new DividerField(),
                 new SwitchField([
                     'name'        => 'display_note_created_in_group',
-                    'label'       => __p('note.phrase.display_note_created_in_group'),
-                    'description' => __p('note.phrase.display_note_created_in_group_description'),
+                    'label'       => __p('note::phrase.display_note_created_in_group'),
+                    'description' => __p('note::phrase.display_note_created_in_group_description'),
                 ]),
             );
         }
@@ -86,15 +86,15 @@ class SiteSettingForm extends AbstractForm
             new DividerField(),
             new SwitchField([
                 'name'        => 'enable_captcha_challenge_when_adding_a_new_note',
-                'label'       => __p('note.phrase.enable_captcha_challenge_when_adding_a_new_note'),
-                'description' => __p('note.phrase.enable_captcha_challenge_when_adding_a_new_note'),
+                'label'       => __p('note::phrase.enable_captcha_challenge_when_adding_a_new_note'),
+                'description' => __p('note::phrase.enable_captcha_challenge_when_adding_a_new_note'),
             ]),
         );
 
         $footer = $this->addFooter();
         $footer->addFields(
             new Submit([
-                'label' => __p('core.phrase.save_changes'),
+                'label' => __p('core::phrase.save_changes'),
             ]),
         );
     }
